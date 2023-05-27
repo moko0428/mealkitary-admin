@@ -37,7 +37,7 @@ export default function Home() {
             <ReserveListItems />
           </div>
         ) : (
-          <div className="absolute top-1/2">예약 대기중...</div>
+          <div className="absolute top-24 text-base">등록된 예약이 없습니다.</div>
         )}
       </div>
 
