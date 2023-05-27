@@ -1,28 +1,46 @@
 import Layout from "@/components/layout";
-import Modal from "@/components/modal";
-import { modalState } from "@/lib/recoilState";
+import Modal, { ReserveProp } from "@/components/modal";
+import { modalState, reserveState } from "@/lib/recoilState";
+import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { useRecoilState } from "recoil";
+import DetailModal from "@/components/detailModal";
+import reserveListData from "@/data/reserveList.json";
+import ReserveListItems from "@/components/reserveListItems";
 
 export default function Home() {
   const [reservation, setReservation] = useRecoilState(modalState);
+  const [reserveList, setReserveList] = useRecoilState<ReserveProp[]>(reserveState);
+  const router = useRouter();
 
   useEffect(() => {
     const timer = setTimeout(() => {
       setReservation(1);
-    }, 8000);
+    }, 1000);
 
     return () => {
       clearTimeout(timer);
     };
   }, []);
 
+  useEffect(() => {
+    setReserveList(reserveListData);
+  }, []);
+
   return (
     <Layout>
-      <div className="pt-16 px-2 h-[36rem] flex justify-center relative">
+      <div className="px-8 flex justify-center relative mb-10">
         {reservation ? <Modal /> : ""}
-        <div className="absolute top-36">예약 대기 중...</div>
+        {router.query.id ? <DetailModal /> : ""}
+        {reserveList.length !== 0 ? (
+          <div className="grid gap-x-20 gap-y-0 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
+            <ReserveListItems />
+          </div>
+        ) : (
+          <div className="absolute top-1/2">예약 대기중...</div>
+        )}
       </div>
+
       {reservation ? (
         <div className="bg-[rgba(0,0,0,0.2)] fixed top-0 left-0 z-10 w-screen h-screen"></div>
       ) : (
