@@ -1,0 +1,114 @@
+[
+  {
+    "id": 1,
+    "nickname": "프론트가좋앙",
+    "image": "/images/dog.jpg",
+    "menu": [
+      {
+        "id": 1,
+        "name": "피자",
+        "count": 2,
+        "price": 12000
+      },
+      {
+        "id": 2,
+        "name": "스테이크",
+        "count": 1,
+        "price": 25000
+      },
+      {
+        "id": 3,
+        "name": "샐러드",
+        "count": 3,
+        "price": 8000
+      }
+    ],
+    "reserveDate": "2023-05-28 21:05",
+    "pickupDate": "2023-05-29 14:00",
+    "totalPrice": 45000
+  },
+  {
+    "id": 2,
+    "nickname": "밀키트털이범",
+    "image": "/images/thief.jpg",
+    "menu": [
+      {
+        "id": 1,
+        "name": "파스타",
+        "count": 1,
+        "price": 8000
+      },
+      {
+        "id": 2,
+        "name": "햄버거",
+        "count": 1,
+        "price": 6000
+      },
+      {
+        "id": 3,
+        "name": "곱창",
+        "count": 1,
+        "price": 13000
+      }
+    ],
+    "reserveDate": "2023-05-29 21:05",
+    "pickupDate": "2023-05-30 16:30",
+    "totalPrice": 27000
+  },
+  {
+    "id": 3,
+    "nickname": "나만솔로",
+    "image": "/images/yeongchal.png",
+    "menu": [
+      {
+        "id": 1,
+        "name": "스파게티",
+        "count": 1,
+        "price": 8000
+      },
+      {
+        "id": 2,
+        "name": "막창",
+        "count": 1,
+        "price": 13000
+      },
+      {
+        "id": 3,
+        "name": "매운 닭발",
+        "count": 2,
+        "price": 16000
+      }
+    ],
+    "reserveDate": "2023-05-30 21:05",
+    "pickupDate": "2023-06-02 22:00",
+    "totalPrice": 37000
+  },
+  {
+    "id": 4,
+    "nickname": "중국틱톡커",
+    "image": "/images/jung.jpg",
+    "menu": [
+      {
+        "id": 1,
+        "name": "마라탕",
+        "count": 1,
+        "price": 9000
+      },
+      {
+        "id": 2,
+        "name": "꿔바로우",
+        "count": 1,
+        "price": 13000
+      },
+      {
+        "id": 3,
+        "name": "마라샹궈",
+        "count": 1,
+        "price": 12000
+      }
+    ],
+    "reserveDate": "2023-05-30 21:05",
+    "pickupDate": "2023-06-02 22:00",
+    "totalPrice": 24000
+  }
+]

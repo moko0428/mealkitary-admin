@@ -1,28 +1,28 @@
 {
-  "id": 1,
+  "id": 5,
   "nickname": "조보아내려와",
   "image": "/images/backjongone.jpg",
   "menu": [
     {
       "id": 1,
-      "name": "피자",
+      "name": "제육볶음",
       "count": 2,
-      "price": 12000
+      "price": 13000
     },
     {
       "id": 2,
-      "name": "스테이크",
+      "name": "돈까스",
       "count": 1,
-      "price": 25000
+      "price": 8000
     },
     {
       "id": 3,
-      "name": "샐러드",
-      "count": 3,
-      "price": 8000
+      "name": "초밥",
+      "count": 1,
+      "price": 10000
     }
   ],
-  "reserveDate": "2023-05-30 21:05",
-  "pickupDate": "2023-06-02 14:00",
-  "totalPrice": 45000
+  "reserveDate": "2023-05-29 18:21",
+  "pickupDate": "2023-06-03 15:30",
+  "totalPrice": 31000
 }
