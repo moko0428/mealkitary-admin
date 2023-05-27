@@ -30,7 +30,7 @@ export default function DetailModal() {
       {detailData ? (
         <motion.div
           layoutId={String(router.query.id)}
-          className="absolute left-0 right-0 mx-auto mt-10 w-[36rem] h-[27.5rem] border border-gray-400 rounded-md flex flex-col px-4 py-4 bg-white z-20"
+          className="absolute left-0 right-0 mx-auto mt-10 w-[28rem] h-[27.5rem] border border-gray-400 rounded-md flex flex-col px-4 py-4 bg-white z-20 sm:w-[32rem] md:w-[36rem]"
         >
           <div className="flex justify-between text-gray-500 text-sm">
             <div className="text-gray-500 mb-5 text-sm">NO. {detailData[0].id}</div>
