@@ -28,7 +28,8 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "src/pages/firebase-message-sw.js"
+    "src/pages/token.js",
+    "src/components/tokenBtn.js"
   ],
   "exclude": ["node_modules"]
 }
