@@ -2,11 +2,15 @@ import Layout from "@/components/layout";
 import Modal, { ReserveProp } from "@/components/modal";
 import { modalState, reserveState } from "@/lib/recoilState";
 import { useRouter } from "next/router";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useRecoilState } from "recoil";
 import DetailModal from "@/components/detailModal";
 import reserveListData from "@/data/reserveList.json";
 import ReserveListItems from "@/components/reserveListItems";
+import { getMessaging, getToken, onMessage } from "firebase/messaging";
+import { initializeApp } from "firebase/app";
+// 주석 상태에서 실행한 후 주석 해제하고 저장하면 토큰이 발급됨 (한번)
+//import "./firebase-message-sw";
 
 export default function Home() {
   const [reservation, setReservation] = useRecoilState(modalState);
@@ -17,6 +21,45 @@ export default function Home() {
   useEffect(() => {
     setReserveList(reserveListData);
   }, []);
+  // const onMessageFCM = async () => {
+  //   //브라우저에 알림 권한을 요청한다.
+  //   const permission = await Notification.requestPermission();
+  //   if (permission !== "granted") return;
+
+  //   const firebaseApp = initializeApp({
+  //     apiKey: process.env.NEXT_PUBLIC_API_KEY,
+  //     authDomain: process.env.NEXT_PUBLIC_AUTH,
+  //     projectId: "ex-fcm-efa3f",
+  //     storageBucket: "ex-fcm-efa3f.appspot.com",
+  //     messagingSenderId: process.env.NEXT_PUBLIC_MESSAGE_SENDERID,
+  //     appId: process.env.NEXT_PUBLIC_APPID,
+  //     measurementId: process.env.NEXT_PUBLIC_MEASUREMENTID,
+  //   });
+  //   const messaging = getMessaging(firebaseApp);
+
+  //   getToken(messaging, {
+  //     vapidKey: process.env.NEXT_PUBLIC_VAPID,
+  //   })
+  //     .then((currentToken) => {
+  //       if (currentToken) {
+  //         // 정상적으로 토큰이 발급되면 콘솔에 출력한다.
+  //         console.log(currentToken);
+  //       } else {
+  //         console.log("예기치 않은 오류로 토큰 발급 불가");
+  //       }
+  //     })
+  //     .catch((err) => {
+  //       console.log("예기치 않은 오류 발생", err);
+  //     });
+  //   onMessage(messaging, (payload) => {
+  //     console.log("Message received.", payload);
+  //     setReservation(1);
+  //   });
+  // };
+
+  // useEffect(() => {
+  //   onMessageFCM();
+  // }, []);
 
   return (
     <Layout>
